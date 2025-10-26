@@ -2,7 +2,7 @@ import React, { useState, useMemo, type ReactNode, useEffect } from "react";
 import { useSelector } from "react-redux";
 import type { RootState } from "@/app/store";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 import UserForm, { type User } from "@/pages/UserForm";
 import { Grid3x2, List, Pencil, Search, Trash } from "lucide-react";
@@ -153,6 +153,9 @@ const Users: React.FC = () => {
                             <Button className="bg-blue-500 hover:bg-blue-600">Create User</Button>
                         </DialogTrigger>
                         <DialogContent onOpenAutoFocus={(e) => e.preventDefault()}>
+                            <DialogTitle className="text-lg font-semibold mb-2 pb-3 border-b border-[#ccc]">
+                                Create User
+                            </DialogTitle>
                             <UserForm
                                 onCancel={onCancelDialog}
                                 onSubmit={handleUserSubmit}
@@ -222,6 +225,9 @@ const Users: React.FC = () => {
                                                 className="focus:outline-none focus:ring-2 focus:ring-blue-500 bg-blue-500 hover:bg-blue-600 text-white" variant="secondary" size="sm">Edit</Button>
                                         </DialogTrigger>
                                         <DialogContent onOpenAutoFocus={(e) => e.preventDefault()}>
+                                            <DialogTitle className="text-lg font-semibold mb-2 pb-3 border-b border-[#ccc]">
+                                                Edit User
+                                            </DialogTitle>
                                             <UserForm
                                                 onCancel={onCancelDialog}
                                                 onSubmit={handleUserSubmit}
@@ -272,6 +278,9 @@ const Users: React.FC = () => {
                                         </button>
                                     </DialogTrigger>
                                     <DialogContent onOpenAutoFocus={(e) => e.preventDefault()}>
+                                        <DialogTitle className="text-lg font-semibold mb-2 pb-3 border-b border-[#ccc]">
+                                            Edit User
+                                        </DialogTitle>
                                         <UserForm
                                             onCancel={onCancelDialog}
                                             onSubmit={handleUserSubmit}

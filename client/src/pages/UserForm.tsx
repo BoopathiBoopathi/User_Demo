@@ -55,9 +55,9 @@ export default function UserForm({
     };
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
-            <h2 className="text-lg font-semibold mb-2 pb-3 border-b border-[#ccc]">
+            {/* <h2 className="text-lg font-semibold mb-2 pb-3 border-b border-[#ccc]">
                 {user?._id ? "Edit User" : "Create User"}
-            </h2>
+            </h2> */}
 
             <div className="flex flex-col gap-2">
                 <label htmlFor="firstName" className="text-sm font-medium">
