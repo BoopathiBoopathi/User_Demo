@@ -33,7 +33,7 @@ const Login = () => {
                     title: message,
                     description: 'Login succefully'
                 })
-                navigate("/dashboard");
+                navigate("/users");
             } else {
                 setError("Invalid credentials");
             }

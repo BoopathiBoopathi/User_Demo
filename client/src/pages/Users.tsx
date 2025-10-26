@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 import UserForm, { type User } from "@/pages/UserForm";
-import { ChevronLeft, ChevronRight, Grid3x2, List, Pencil, Search, Trash } from "lucide-react";
+import { ChevronLeft, ChevronRight, Grid3x2, List, LogOut, Pencil, Search, Trash } from "lucide-react";
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel } from "@/components/ui/alert-dialog";
 import { useToast } from "@/hooks/use-toast";
-import { createUser, deleteUserById, getUserList, updateUserById } from "@/apiCall/v1/api_v1";
+import { clearTokens, createUser, deleteUserById, getUserList, updateUserById } from "@/apiCall/v1/api_v1";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 
@@ -155,7 +155,6 @@ const Users: React.FC = () => {
 
     return (
         <div className="flex flex-col h-[calc(100vh-50px)]">
-
             <div className="flex-shrink-0">
                 <div className="flex justify-between mb-4">
                     <h1 className="text-2xl font-semibold mb-4">Users</h1>
