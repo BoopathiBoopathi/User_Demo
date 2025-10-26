@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 import UserForm, { type User } from "@/pages/UserForm";
-import { ChevronLeft, ChevronRight, Grid3x2, List, LogOut, Pencil, Search, Trash } from "lucide-react";
+import { ChevronLeft, ChevronRight, Grid3x2, List, Pencil, Search, Trash } from "lucide-react";
 import { AlertDialog, AlertDialogTrigger, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogDescription, AlertDialogFooter, AlertDialogCancel } from "@/components/ui/alert-dialog";
 import { useToast } from "@/hooks/use-toast";
-import { clearTokens, createUser, deleteUserById, getUserList, updateUserById } from "@/apiCall/v1/api_v1";
+import { createUser, deleteUserById, getUserList, updateUserById } from "@/apiCall/v1/api_v1";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 
