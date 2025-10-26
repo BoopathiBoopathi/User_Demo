@@ -1,5 +1,5 @@
 
-import axios, { AxiosError } from "axios";
+import axios, { AxiosError, AxiosHeaders } from "axios";
 import { setUsers } from "@/features/layout/layoutSlice";
 import { store } from "@/app/store";
 import type { User } from "@/pages/UserForm";
@@ -43,10 +43,11 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use((config) => {
     const token = getAccessToken();
     if (token) {
-        config.headers = {
-            ...config.headers,
-            Authorization: `Bearer ${token}`,
-        };
+        if (config.headers instanceof AxiosHeaders) {
+            config.headers.set("Authorization", `Bearer ${token}`);
+        } else {
+            config.headers = new AxiosHeaders(config.headers).set("Authorization", `Bearer ${token}`);
+        }
     }
     return config;
 });

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, type ReactNode, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import type { RootState } from "@/app/store";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
@@ -45,7 +45,6 @@ function DeleteUserButton({
 }
 
 const Users: React.FC = () => {
-    const dispatch = useDispatch();
     const { toast } = useToast();
     const users = useSelector((state: RootState) => state.layout.users);
 
