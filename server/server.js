@@ -21,6 +21,7 @@ app.use(
 
 app.use(express.json());
 app.use(logger);
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.use("/api/v1/auth", authRoutesV1);
 app.use("/api/v1/users", userRoutesV1);
@@ -28,6 +29,10 @@ app.use("/api/v1/users", userRoutesV1);
 
 const PORT = process.env.PORT || 5000;
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+});
+
 connectDB().then(() => {
-    app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 });
