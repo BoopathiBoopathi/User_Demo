@@ -1,15 +1,18 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import path from 'path';
+import { fileURLToPath } from "url";
 import connectDB from "./config/db.js";
 import logger from "./middlewares/logger.js";
 
 import authRoutesV1 from "./routes/v1/authRoutes.js";
 import userRoutesV1 from "./routes/v1/userRoutes.js";
 
-
 dotenv.config();
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.use(
     cors({
